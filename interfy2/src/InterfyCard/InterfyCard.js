@@ -77,8 +77,8 @@ export class InterfyCard extends PureComponent {
         var i = 0;
         return(
             <React.Fragment>
-                {this.props.course.optionals.map(() => {
-                    while(i < this.props.course.optionals.length && i < 3){
+                {this.props.school.optionals.map(() => {
+                    while(i < this.props.school.optionals.length && i < 3){
                         i++;
                         return(
                             <Row>
@@ -92,7 +92,7 @@ export class InterfyCard extends PureComponent {
                                         }
                                     )}
                                 </Col>
-                                <Col span={16}><p>{this.props.course.optionals[i-1].description}</p></Col>
+                                <Col span={16}><p>{this.props.school.optionals[i-1].description}</p></Col>
                             </Row>
                         )
                     }
@@ -105,13 +105,13 @@ export class InterfyCard extends PureComponent {
         var i = 0;
         return(
             <React.Fragment>
-                {this.props.course.course.map(() => {
-                    while(i < this.props.course.course.length && i < 3){
+                {this.props.school.courses.map(() => {
+                    while(i < this.props.school.courses.length && i < 3){
                         i++;
                         return(
                             <Row style={paragraphStyle}>
-                                <p>{this.props.course.course[i-1].title}</p>
-                                <p>Por R${this.props.course.course[i-1].price}</p>
+                                <p>{this.props.school.courses[i-1].title}</p>
+                                <p>Por R${this.props.school.courses[i-1].price}</p>
                             </Row>
                         )
                     }

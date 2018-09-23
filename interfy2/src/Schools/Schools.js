@@ -1,190 +1,57 @@
-import React, {Component, Fragment} from "react";
-import {InterfyCard} from '../InterfyCard/InterfyCard.js'
+import React, { Component, Fragment } from "react";
+import { Row, Col } from "antd";
+import { InterfyCard } from "../InterfyCard/InterfyCard.js";
+import gql from "graphql-tag";
+import { Query } from "react-apollo";
+import Filter from "../Components/Filter/Filter";
+import {languages, countries} from "../Placeholder/placeholder"
 
-var testcourse = [
-    {
-        course: [
-            {
-                title: 'Inglês geral',
-                price:'999,99'
-            },
-            {
-                title: 'Inglês geral',
-                price:'999,99'
-            },
-            {
-                title: 'Inglês geral',
-                price:'999,99'
-            },
-            {
-                title: 'Inglês geral',
-                price:'999,99'
-            },
-        ],
-        country: {
-            name: 'Malta',
-            city: 'St Julians'
-        },
-        optionals: [{
-                icon: 'bus',
-                description: 'Transfer do aeroporto'
-            },
-            {
-                icon: 'pool',
-                description: 'Piscina e área de convivência'
-            },
-            {
-                icon: 'pool',
-                description: 'Internet'
-            },
-            {
-                icon: 'pool',
-                description: 'Piscina e área de convivência'
-            },
-            {
-                icon: 'pool',
-                description: 'Piscina e área de convivência'
-            },
-            {
-                icon: 'pool',
-                description: 'Piscina e área de convivência'
-            },
-        ],
-        photos: ['endereco1', 'endereco2', 'endereco3'],
-        _id:'1'
-    },
-    {
-        course: [
-            {
-                title: 'Inglês geral',
-                price:'999,99'
-            },
-            {
-                title: 'Inglês geral',
-                price:'999,99'
-            },
-            {
-                title: 'Inglês geral',
-                price:'999,99'
-            },
-            {
-                title: 'Inglês geral',
-                price:'999,99'
-            },
-        ],
-        country: {
-            name: 'Canada',
-            city: 'St Julians'
-        },
-        optionals: [{
-                icon: 'bus',
-                description: 'Transfer do aeroporto'
-            },
-            {
-                icon: 'pool',
-                description: 'Piscina e área de convivência'
-            },
-            {
-                icon: 'pool',
-                description: 'Internet'
-            },
-            {
-                icon: 'pool',
-                description: 'Piscina e área de convivência'
-            },
-            {
-                icon: 'pool',
-                description: 'Piscina e área de convivência'
-            },
-            {
-                icon: 'pool',
-                description: 'Piscina e área de convivência'
-            },
-        ],
-        photos: ['endereco1', 'endereco2', 'endereco3'],
-        _id:'2'
-    },
-    {
-        course: [
-            {
-                title: 'Inglês Teste',
-                price:'999,99'
-            },
-            {
-                title: 'Inglês geral',
-                price:'999,99'
-            },
-            {
-                title: 'Inglês geral',
-                price:'999,99'
-            },
-            {
-                title: 'Inglês geral',
-                price:'999,99'
-            },
-        ],
-        country: {
-            name: 'Malta',
-            city: 'St Julians'
-        },
-        optionals: [{
-                icon: 'bus',
-                description: 'Transfer do aeroporto'
-            },
-            {
-                icon: 'pool',
-                description: 'Piscina e área de convivência'
-            },
-            {
-                icon: 'pool',
-                description: 'Internet'
-            },
-            {
-                icon: 'pool',
-                description: 'Piscina e área de convivência'
-            },
-            {
-                icon: 'pool',
-                description: 'Piscina e área de convivência'
-            },
-            {
-                icon: 'pool',
-                description: 'Piscina e área de convivência'
-            },
-        ],
-        photos: ['endereco1', 'endereco2', 'endereco3'],
-        _id:'3'
-    },
-]
+const GET_SCHOOL = gql`
+  {
+    findSchool {
+      _id
+      optionals {
+        icon
+        description
+      }
+      courses {
+        title
+      }
+    }
+  }
+`;
 
 export class Schools extends Component {
+  render() {
+    const cardList = (
+      <Query query={GET_SCHOOL}>
+        {({ loading, error, data }) => {
+          if (loading) return "Loading...";
+          if (error) return `Error! ${error.message}`;
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            selectedCountry:'',
-        };
-    }
-
-    componentWillUnmount(){
-        alert(this.props.getGlobalState)
-    }
-
-    render() {
-        const renderCards = testcourse.map((curso) => {
-                if (this.props.selectedCountry === curso.country.name) {
-                    return (<InterfyCard 
-                            key={curso._id}
-                            course={curso} 
-                            getKey={() => this.props.getGlobalState(curso._id)}
-                    />)
-                }
-            })
-            
-        return (
-            <React.Fragment>
-                {renderCards}
-            </React.Fragment>
-        )
-    }
+          return data.findSchool.map(school => {
+            return (
+              <InterfyCard
+                key={school._id}
+                school={school}
+                getKey={() => this.props.setGlobalState(school._id)}
+              />
+            );
+          });
+        }}
+      </Query>
+    );
+    return (
+      <React.Fragment>
+        <Row justify="center">
+          <Col md={7} xs={24}>
+            <Filter languages={languages} countries={countries} />
+          </Col>
+          <Col md={17} xs={24}>
+            {cardList}
+          </Col>
+        </Row>
+      </React.Fragment>
+    );
+  }
 }
