@@ -29,15 +29,42 @@ export class MainPage extends Component{
                     <Col xs={{span:'1'}}></Col>
                 </Row>
                 <Row>
-                    <Col xs={{span:'1'}}></Col>
-                    <Col xs={{span:'22'}} style={{textAlign:'center', color:'#281E78', fontFamily:'Montserrat', fontSize:'20px'}}>Onde será sua próxima jornada?</Col>
-                    <Col xs={{span:'1'}}></Col>
-                </Row>
-                <Row style={{marginTop:'7%'}}>
-                    <Col xs={{span:'1'}}></Col>
-                    <Col xs={{span:'9'}}></Col>
-                    <Col xs={{span:'9'}}></Col>
-                    <Col xs={{span:'1'}}></Col>
+                    <Col xs={{span:'10', offset:'1'}}>
+                        <CountryCards
+                            title='Austrália'
+                            image='https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png'
+                        />
+                    </Col>
+                    <Col xs={{span:'10', offset:'1'}}>
+                        <CountryCards
+                            title='Austrália'
+                            image='https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png'
+                        />
+                    </Col>
+                    <Col xs={{span:'10', offset:'1'}}>
+                        <CountryCards
+                            title='Austrália'
+                            image='https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png'
+                        />
+                    </Col>
+                    <Col xs={{span:'10', offset:'1'}}>
+                        <CountryCards
+                            title='Austrália'
+                            image='https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png'
+                        />
+                    </Col>
+                    <Col xs={{span:'10', offset:'1'}}>
+                        <CountryCards
+                            title='Austrália'
+                            image='https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png'
+                        />
+                    </Col>
+                    <Col xs={{span:'10', offset:'1'}}>
+                        <CountryCards
+                            title='Austrália'
+                            image='https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png'
+                        />
+                    </Col>
                 </Row>
             </div>
         )
