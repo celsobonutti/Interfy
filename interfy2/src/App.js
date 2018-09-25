@@ -63,7 +63,7 @@ class App extends Component {
           <Route path="/testpage"
             render= {
               () => (
-                <Testpage
+                <BuyScreen
                 />
               )}/>
         </div>

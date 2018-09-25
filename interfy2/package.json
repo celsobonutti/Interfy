@@ -8,6 +8,7 @@
     "apollo-boost": "^0.1.16",
     "escape-string-regexp": "^1.0.5",
     "graphql": "^14.0.2",
+    "npm": "^6.4.1",
     "prop-types": "^15.6.2",
     "react": "^16.5.0",
     "react-apollo": "^2.1.11",
