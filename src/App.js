@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import "./App.css";
 import { Route } from "react-router-dom";
-import { Navbar } from "./Navbar/Navbar.js";
-import { Schools } from "./Schools/Schools.js";
-import { MainPage } from "./MainPage/mainpage.js";
-import { BuyScreen } from "./BuyScreen/BuyScreen.js";
+import { Navbar } from "./Navigation/Navbar/Navbar.js";
+import { Schools } from "./Pages/Schools/Schools.js";
+import { MainPage } from "./Pages/MainPage/MainPage";
+import { BuyScreen } from "./Pages/BuyScreen/BuyScreen.js";
 import { Testpage } from "./Testpage.js";
 import { lang } from "moment";
 

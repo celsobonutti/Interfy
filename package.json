@@ -7,19 +7,24 @@
     "antd": "^3.9.2",
     "apollo-boost": "^0.1.16",
     "escape-string-regexp": "^1.0.5",
-    "graphql": "^14.0.2",
+    "graphql": "^0.11.7",
     "npm": "^6.4.1",
     "prop-types": "^15.6.2",
     "react": "^16.5.0",
     "react-apollo": "^2.1.11",
     "react-dom": "^16.5.0",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.5"
+    "react-scripts": "^2.0.0-next.fb6e6f70"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "browserslist": [
+    ">0.25%",
+    "not op_mini all",
+    "ie 11"
+  ]
 }

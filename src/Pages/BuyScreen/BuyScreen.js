@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {SelectionCard} from '../SelectionCard/SelectionCard.js';
+import {SelectionCard} from '../../Components/SelectionCard/SelectionCard';
 
 export class BuyScreen extends Component{
     render(){

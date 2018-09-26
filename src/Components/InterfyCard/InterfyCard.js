@@ -2,8 +2,8 @@ import React, {PureComponent} from 'react';
 import {Card, Row, Col, Carousel, Icon, Button} from 'antd';
 import {Link} from 'react-router-dom';
 
-var car = require('../icons/car.svg')
-var pool = require('../icons/pool.svg')
+var car = require('../../icons/car.svg')
+var pool = require('../../icons/pool.svg')
 
 var reactNodeImg = React.createElement('img',{
         src:'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png',

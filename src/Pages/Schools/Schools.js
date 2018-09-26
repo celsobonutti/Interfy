@@ -1,10 +1,10 @@
 import React, { Component, Fragment } from "react";
 import { Row, Col } from "antd";
-import { InterfyCard } from "../InterfyCard/InterfyCard.js";
+import { InterfyCard } from "../../Components/InterfyCard/InterfyCard.js";
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
-import Filter from "../Components/Filter/Filter";
-import {languages, countries} from "../Placeholder/placeholder"
+import Filter from "../../Components/Filter/Filter";
+import {languages, countries} from "../../Placeholder/placeholder"
 
 const GET_SCHOOL = gql`
   {
@@ -43,11 +43,11 @@ export class Schools extends Component {
     );
     return (
       <React.Fragment>
-        <Row justify="center">
-          <Col md={7} xs={24}>
+        <Row type="flex" justify="center">
+          <Col md={7} sm={24}>
             <Filter languages={languages} countries={countries} />
           </Col>
-          <Col md={17} xs={24}>
+          <Col md={17} sm={24}>
             {cardList}
           </Col>
         </Row>
