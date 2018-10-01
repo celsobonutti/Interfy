@@ -17,6 +17,7 @@ const GET_SCHOOL = gql`
       courses {
         title
       }
+      photos
     }
   }
 `;

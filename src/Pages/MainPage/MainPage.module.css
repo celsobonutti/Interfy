@@ -1,0 +1,32 @@
+.page{
+    max-width: 1300px;
+    width:100%;
+    margin:auto;
+}
+
+.title{
+    margin-bottom: 20px;
+}
+
+.title p{
+    margin: 0;
+    text-align: center;
+    color: #8B3195;
+    font-family: "montserrat";
+    font-size: 20px;
+}
+
+.title h1{
+    text-align: center;
+    color: #281E78;
+    font-family: 'Fredoka One';
+    font-size: 30px;
+    margin: 0;
+}
+
+.question{
+    font-family: 'montserrat';
+    font-size: 17px;
+    color: #281E78;
+    text-align: center;
+}

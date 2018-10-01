@@ -1,6 +1,5 @@
 import React, {PureComponent} from 'react';
-import {Card, Row, Col, Icon, Button} from 'antd';
-import {Link} from 'react-router-dom';
+import {Card, Row, Col} from 'antd';
 
 export class SelectionCard extends PureComponent {
     render(){

@@ -6,18 +6,12 @@ const { Meta } = Card;
 export class CountryCard extends PureComponent{
     render(){
         return(
-            <React.Fragment>
-                <Card
-                    hoverable
-                    className={style.image}
-                    cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
-                >
-                    <Meta
-                    title={this.props.title}
-                    description="www.instagram.com"
-                    />
-                </Card>
-            </React.Fragment>
+            <div onClick={()=>this.props.selectCountry} className={style.card} >
+                <img src={this.props.image}></img>
+                <div className={style.text}>
+                    <p>{this.props.title}</p>
+                </div>
+            </div>
         )
     }
 }
