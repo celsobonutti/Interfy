@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {Collapse, Radio, Input, Checkbox} from 'antd';
+import style from "./Filter.module.css"
 const Panel = Collapse.Panel;
 const RadioGroup = Radio.Group;
 const CheckboxGroup = Checkbox.Group;
@@ -49,16 +50,17 @@ class Filter extends Component {
 
 
         return (
-            <React.Fragment>
-               <Collapse bordered={false}>
+            <div className={style.filter}>
+                <p>Filtros</p>
+                <Collapse activeKey={['1', '2']} bordered={false}>
                     <Panel header="País" key="1">
                         {countryFilter}
                     </Panel>
                     <Panel header="Idioma" key="2">
                         {languageFilter}
                     </Panel>
-               </Collapse> 
-            </React.Fragment>
+                </Collapse> 
+            </div>
           );
     }
 }

@@ -5,11 +5,14 @@ import gql from "graphql-tag";
 import { Query } from "react-apollo";
 import Filter from "../../Components/Filter/Filter";
 import {languages, countries} from "../../Placeholder/placeholder"
-
+import style from "./Schools.module.css"
 const GET_SCHOOL = gql`
   {
     findSchool {
       _id
+      name
+      country
+      city
       optionals {
         icon
         description
@@ -44,8 +47,8 @@ export class Schools extends Component {
     );
     return (
       <React.Fragment>
-        <Row type="flex" justify="center">
-          <Col md={7} sm={24}>
+        <Row className={style.schools}>
+          <Col md={7} xs={0} sm={0}>
             <Filter languages={languages} countries={countries} />
           </Col>
           <Col md={17} sm={24}>

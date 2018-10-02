@@ -1,0 +1,14 @@
+.filter{
+    max-width: 390px;
+    border: 1px solid black;
+    border-radius: 6px;
+    padding: 20px 25px;
+}
+
+.filter p{
+    font-family: 'Fredoka One';
+    font-size: 30px;
+    color: #281E78;
+    text-align: center;
+    margin:0;
+}
