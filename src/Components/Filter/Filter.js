@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import {Collapse, Radio, Input, Checkbox} from 'antd';
 import style from "./Filter.module.css"
+import {GET_FILTERS} from "../../Configuration/queries"
+
 const Panel = Collapse.Panel;
 const RadioGroup = Radio.Group;
 const CheckboxGroup = Checkbox.Group;
