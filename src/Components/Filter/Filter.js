@@ -1,67 +1,63 @@
 import React, { Component } from "react";
-import {Collapse, Radio, Input, Checkbox} from 'antd';
-import style from "./Filter.module.css"
+import { Select } from 'antd';
+import { Link } from "react-router-dom";
+import style from "./Filter.module.scss"
 import {GET_FILTERS} from "../../Configuration/queries"
+import {filters} from "../../Placeholder/placeholder"; 
 
-const Panel = Collapse.Panel;
-const RadioGroup = Radio.Group;
-const CheckboxGroup = Checkbox.Group;
+const Option = Select.Option;
 
 class Filter extends Component {
-    state = { 
-        selectedCountry: 'MA',
-        selectedLanguages: []
-    }
-    
-    onCountryChange = (e) =>{
-        this.setState({
-            selectedCountry: e.target.value
-        })
+    constructor(props) {
+        super(props);
+        this.state = this.props.selected;
+      }
+
+    selected = {
+
     }
 
-    onLanguageChange = (e) =>{
-        this.setState({
-            selectedLanguages: e
-        })
+    changeHandler = (value, selector) =>{
+        this.selected[selector] = value;
+        this.setState(this.selected);
     }
 
-    render() { 
-        const optionStyle = {
-            display: 'block',
-            height: '30px',
-            lineHeight: '30px',
-            marginLeft: '8px'
-        };
+    stringBuilder = () =>  {
+        let args = "/escolas?";
+        Object.entries(this.state).forEach(([key, value], index) => {
+            if(index !== 0)
+                args = args.concat("&")
+            if(Array.isArray(value)){
+                value.forEach((element, index) => {
+                    if(index !== 0)
+                    args = args.concat("&")
+                    args = args.concat(`${key}=${element}`);
+                })
+            }
+            else
+                args = args.concat(`${key}=${value}`);
+        });
+        return args;
+    }
 
-
-        const countryFilter = (
-            <RadioGroup onChange={this.onCountryChange} value={this.state.selectedCountry}>
-                {this.props.countries.map((country)=>{
-                    return <Radio style={optionStyle} value={country.acronym}>{country.name}</Radio>
-                })}
-            </RadioGroup>
-        )
-
-        const languageFilter = (
-            <CheckboxGroup value={this.state.selectedLanguages} onChange={this.onLanguageChange}>
-                {this.props.languages.map((language)=>{
-                    return <Checkbox style={optionStyle} value={language}>{language}</Checkbox> 
-                })}
-            </CheckboxGroup>
-        )
-
+    render() {
+        
+        const filterBuilder = filters.map(filter=>(
+            <div className={style.dropdownFilter}>
+                <label>{filter.label}</label>
+                <Select mode={filter.mode} key={filter.selector} value={this.state[filter.selector]} onChange={(value)=> this.changeHandler(value, filter.selector)} className={style.dropdownSelector}>
+                    {filter.options.map((option)=>{
+                        return <Option key={option.value} className={style.dropdownOption} value={option.value}>{option.name}</Option>
+                    })}
+                </Select>
+            </div>
+        ))
 
         return (
             <div className={style.filter}>
                 <p>Filtros</p>
-                <Collapse activeKey={['1', '2']} bordered={false}>
-                    <Panel header="País" key="1">
-                        {countryFilter}
-                    </Panel>
-                    <Panel header="Idioma" key="2">
-                        {languageFilter}
-                    </Panel>
-                </Collapse> 
+                {filterBuilder}
+                <Link to={this.stringBuilder()}>Buscar</Link>
             </div>
           );
     }

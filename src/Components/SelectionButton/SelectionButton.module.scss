@@ -1,0 +1,59 @@
+.selectionButton{
+    display: flex;
+    cursor: pointer;
+    text-align: center;
+    font-family: 'Montserrat';
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px grey;
+    margin-bottom: 20px;
+    text-align: center;
+
+    span{
+        display: flex;
+        padding: 2px;
+        align-items:center;
+        justify-content: center;
+        width: 60%;
+        min-height: 50px;
+
+        &:first-child{
+            width: 40%;
+            border-radius: 5px 0 0 5px;
+            padding: 5px;
+            color: white;
+            background: #4D4D4D;
+            font-weight: bold;
+            transition: .2s;
+        }
+
+        &.active{
+            &:first-child{
+                background: #281E78;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 767px){
+    .selectionButton{
+        max-width: 250px;
+        flex-direction: column;
+        justify-content: end;
+
+        span{
+            padding: 5px 2px;
+            min-height: auto;
+            width: 100%;
+
+            &:first-child{
+                width: 100%;
+                border-radius: 5px 5px 0 0;
+                padding: 5px;
+                color: white;
+                background: #4D4D4D;
+                font-weight: bold;
+                transition: .2s;
+            }
+        }
+    }
+}

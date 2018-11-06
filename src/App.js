@@ -4,8 +4,7 @@ import { Route } from "react-router-dom";
 import { Navbar } from "./Navigation/Navbar/Navbar.js";
 import { Schools } from "./Pages/Schools/Schools.js";
 import { MainPage } from "./Pages/MainPage/MainPage";
-import { BuyScreen } from "./Pages/BuyScreen/BuyScreen.js";
-import { Testpage } from "./Testpage.js";
+import BuyScreen from "./Pages/BuyScreen/BuyScreen.js";
 import { lang } from "moment";
 
 
@@ -31,44 +30,16 @@ class App extends Component {
 
         <Navbar/>
 
-        <div id='main'>
           <Route path="/(main|)"
             render= {
               () => (
                 <MainPage/>
               )}/>
-        </div>
 
-        <div id='schools'>
-          <Route path="/schools"
-            render= {
-              () => (
-                <Schools
-                  setGlobalState = {this.changeGlobalStateHandler}
-                />
-              )}/>
-        </div>
+          <Route path="/escolas" component={Schools}/>
 
-        <div id='letstravel'>
-          <Route path="/letstravel"
-            render= {
-              () => (
-                <BuyScreen
-                selectedCourseId={this.state.selectedCourseId}
-                />
-              )}/>
+          <Route path="/orcamento" component={BuyScreen}/>
         </div>
-
-        <div id='testpage'>
-          <Route path="/testpage"
-            render= {
-              () => (
-                <BuyScreen
-                />
-              )}/>
-        </div>
-
-      </div>
     );
   }
 }

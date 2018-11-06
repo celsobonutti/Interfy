@@ -1,0 +1,35 @@
+.display{
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 1px 1px 5px grey;
+    border-radius: 5px;
+    width: 100%;
+
+
+    .header{
+        background: #0F0F37;
+        width: 100%;
+        padding: 5px 0;
+        color: white;
+        border-radius: 5px 5px 0 0;
+        font-weight: bold;
+        div{
+            padding: 0 5px;
+        }
+    }
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+@media screen and (min-width: 767px){
+    .display{
+        max-width: 250px;
+        font-size: 1vw;
+    }
+}

@@ -1,0 +1,46 @@
+.page{
+    font-family: 'Montserrat';
+    font-size: 3.5vw;
+
+    h1{
+        font-family: 'Fredoka One';
+        color: #281E78;
+    }
+
+    h2{
+        color: #281E78;
+        font-family: 'Fredoka One';
+    }
+
+    .selectors{
+        margin: auto;
+    }
+
+    .block{
+        box-shadow: 1px 1px 5px grey;
+        border-radius: 5px;
+        padding: 20px;
+        margin: 10px 10px;
+    }
+}
+
+@media screen and (min-width: 767px){
+    .page{
+        padding: 3vw 5vw;
+        font-size: 1vw;
+        width: 100%;
+    }
+
+    .selectors{
+        padding-left: 116px;
+    }
+
+    h1{
+        font-size: 2vw;
+    }
+
+    h2{
+        font-size: 1.4vw;
+    }
+
+}

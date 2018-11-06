@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Col, Row, Icon } from "antd";
+import { Col, Row } from "antd";
 import { CountryCard } from "../../Components/CountryCard/CountryCard";
 import { countries } from "../../Placeholder/placeholder";
 import style from "./MainPage.module.css";
@@ -10,9 +10,9 @@ export class MainPage extends Component {
       return (
         <Col xs={{ span: "10" }} md={{ span: "4" }}>
           <CountryCard
-            selectCountry={this.selectCountryHandler}
             title={country.name}
             image={country.images[0]}
+            acronym={country.acronym}
           />
         </Col>
       );

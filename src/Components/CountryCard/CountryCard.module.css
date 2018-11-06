@@ -37,3 +37,9 @@
     max-width: 100%;
     border-radius: 6px;
 }
+
+@media (max-width: 768px){
+    .card .text p{
+        font-size: 15px;
+    }
+}

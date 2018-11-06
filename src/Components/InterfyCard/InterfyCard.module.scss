@@ -11,43 +11,47 @@ p{
     padding-left: 5px;
     position: relative;
     height: 100%;
-}
 
-.courses p{
-    font-family: 'Montserrat';
-    font-size: 16px;
-    color: #1C2B2B;
-    font-weight: 100;
-}
+    p{
+        font-family: 'Montserrat';
+        font-size: 16px;
+        color: #1C2B2B;
+        font-weight: 100;
+    }
 
-.courses li{
-    margin-bottom: 12px;
-}
+    li{
+        margin-bottom: 12px;
 
-.courses ul::before{
-    color: #fff;
-}
+        p{
+            margin: 0;
+        }
+    }
 
-.courses li p{
-    margin: 0;
-}
+    ul{
+        &:before{
+            color: #fff;
+        }
+    }
+    
+    a{
+        padding: 5px;
+        text-align: center;
+        background: #281E78;
+        font-family: 'Fredoka One';
+        font-size: 22px;
+        color: white;
+        width: 207px;
+        border-radius: 10px;
+        border: 0;
+    }
 
-.courses button{
-    background: #281E78;
-    font-family: 'Fredoka One';
-    font-size: 22px;
-    color: white;
-    width: 207px;
-    border-radius: 10px;
-    border: 0;
-}
-
-.courses .title{
-    font-family: 'Montserrat';
-    font-size: 20px;
-    font-weight: 600;
-    color: #281E78;
-    text-align: center;
+    .title{
+        font-family: 'Montserrat';
+        font-size: 20px;
+        font-weight: 600;
+        color: #281E78;
+        text-align: center;
+    }
 }
 
 .optionals p,
@@ -87,6 +91,8 @@ p{
     max-width: 950px;
     width: 100%;
     border-radius: 10px;
+    border: none;
+    box-shadow: 1px 1px 5px grey;
 }
 
 

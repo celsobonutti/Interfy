@@ -1,0 +1,78 @@
+.filter{
+    max-width: 390px;
+    border: none;
+    box-shadow: 1px 1px 5px grey;
+    border-radius: 6px;
+    padding: 20px 25px;
+    display: flex;
+    flex-direction: column;
+
+    .collapsible{
+        border-bottom: 1px solid #281E78;
+        font-family: 'Montserrat';
+        font-size: 20px;
+    }
+
+    p{
+        font-family: 'Fredoka One';
+        font-size: 30px;
+        color: #281E78;
+        text-align: center;
+        margin:0;
+    }
+
+    a{
+        text-align: center;
+        height: 100%;
+        border-radius: 10px;
+        border: 0;
+        margin: 20px auto;
+        width: 100%;
+        max-width: 210px;
+        background: #281E78;
+        font-family: 'Fredoka One';
+        color: #fff;
+        font-size: 30px;
+        transition: .2s;
+        
+        &:hover{
+            background: #BD2C78;
+            color: #fff;
+        }
+    }
+
+    label{
+        span{
+            font-family: 'Montserrat';
+            font-size: 20px;
+        }
+
+        &:hover{
+            color: #000;
+            transition: .2s;
+        }
+    }
+}
+
+.dropdownFilter{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Montserrat';
+    font-size: 20px;
+    padding: 10px;
+
+    label{
+        margin-right: 20px;
+
+    }
+    .dropdownSelector{
+        width: 100%;
+        max-width: 200px;
+
+        .dropdownOption{
+            font-family: 'Montserrat';
+            font-size: 20px;
+        }
+    }
+}

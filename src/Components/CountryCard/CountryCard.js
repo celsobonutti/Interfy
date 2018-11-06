@@ -1,17 +1,18 @@
 import React, {PureComponent} from "react";
-import {Col, Row, Icon, Card} from 'antd';
+import {Link} from 'react-router-dom';
 import style from "./CountryCard.module.css"
-const { Meta } = Card;
 
 export class CountryCard extends PureComponent{
     render(){
         return(
-            <div onClick={()=>this.props.selectCountry} className={style.card} >
-                <img src={this.props.image}></img>
+            <Link to={`/escolas?country=${this.props.acronym}`}>
+            <div className={style.card} >
+                <img src={this.props.image} alt={this.props.title}></img>
                 <div className={style.text}>
                     <p>{this.props.title}</p>
                 </div>
             </div>
+            </Link>
         )
     }
 }

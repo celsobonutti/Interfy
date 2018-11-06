@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
-import { Card, Row, Col, Carousel, Icon, Button } from "antd";
+import { Card, Row, Col, Carousel, Icon } from "antd";
 import { Link } from "react-router-dom";
-import style from "./InterfyCard.module.css";
+import style from "./InterfyCard.module.scss";
 import "../../icons.css"
 
 export class InterfyCard extends PureComponent {
@@ -35,9 +35,7 @@ export class InterfyCard extends PureComponent {
 
     const quoteButton = 
       (<div className={style.quoteButton}>
-        <Button onClick={this.props.getKey}>
-          <Link to="/letstravel">Fazer orçamento</Link>
-        </Button>
+        <Link to={`/orcamento?school=${school.slug}`}>Fazer orçamento</Link>
       </div>)
 
     return (

@@ -6,27 +6,27 @@ const countries = [
     },
     {
       name: "Zimbabwe",
-      acronym: "ZB",
+      acronym: "ZA",
       images:['https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png']
     },
     {
       name: "Irlanda",
-      acronym: "ZB",
+      acronym: "IR",
       images:['https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png']
     },
     {
       name: "Coreia",
-      acronym: "ZB",
+      acronym: "KR",
       images:['https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png']
     },
     {
       name: "Nordeste de Amaralina",
-      acronym: "ZB",
+      acronym: "NA",
       images:['https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png']
     },
     {
       name: "Buraco do Vegeta",
-      acronym: "ZB",
+      acronym: "BV",
       images:['https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png']
     }
     
@@ -34,7 +34,56 @@ const countries = [
 
 const languages = ["Inglês", "Italiano", "Francês"];
 
+const filters = [
+  {
+      label: "Teste",
+      selector: "test",
+      options: [
+          {
+              value: "memes",
+              name: "Roberto"
+          },
+          {
+              value: "roberto",
+              name: "Baptista"
+          }
+      ],
+      mode: "multiple"
+  },
+  {
+      label: "Países",
+      selector: "country",
+      options: [
+          {
+              value: "ZA",
+              name: "Zimbabwe"
+          },
+          {
+              value: "roberto",
+              name: "Baptista"
+          }
+      ],
+      mode: "default"
+  },
+  {
+      label: "Xd",
+      selector: "xd",
+      options: [
+          {
+              value: "memes",
+              name: "Memes"
+          },
+          {
+              value: "roberto",
+              name: "Baptista"
+          }
+      ],
+      mode: "default"
+  }
+]
+
 export {
     countries,
-    languages
+    languages,
+    filters
 }

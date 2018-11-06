@@ -1,7 +1,7 @@
 import React, {Component} from "react";
-import {Icon, Menu, Submenu} from 'antd';
+import {Icon, Menu} from 'antd';
 import {Link} from 'react-router-dom';
-
+import style from './Navbar.module.scss'
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 
@@ -24,7 +24,7 @@ export class Navbar extends Component{
     
     render(){
         return(
-            <Menu
+            <Menu className={style.navbar}
                 onClick={this.handleClick}
                 selectedKeys={[this.state.current]}
                 mode="horizontal"
@@ -34,7 +34,7 @@ export class Navbar extends Component{
                 </Menu.Item>
                 <SubMenu title={<span className="submenu-title-wrapper"><Icon type="compass" />Intercâmbios</span>}>
                     <MenuItemGroup title="Destinos">
-                        <Menu.Item key="location:1"><Link to='/australia'>Austrália</Link></Menu.Item>
+                        <Menu.Item key="location:1"><Link to='/escolas?pais=australia'>Austrália</Link></Menu.Item>
                         <Menu.Item key="location:2"><Link to='/canada'>Canadá</Link></Menu.Item>
                         <Menu.Item key="location:3"><Link to='/spain'>Espanha</Link></Menu.Item>
                         <Menu.Item key="location:4"><Link to='/ireland'>Irlanda</Link></Menu.Item>
